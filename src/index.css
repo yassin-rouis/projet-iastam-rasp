@@ -1,0 +1,75 @@
+@import url("./css/phosphoricons.css");
+
+:root {
+  --clock: 0;
+  --vibration: 0;
+  --mouvement: 0;
+  --gaz: 0;
+  --vibration-val: calc((var(--vibration) - 90) / 934);
+  --mouvement-val: calc(var(--mouvement) / 1024);
+  --gaz-val: calc((var(--gaz) - 50) / 650);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: black;
+  margin: 0;
+}
+
+#ui {
+  display: flex;
+  gap: 40px;
+  width: calc(100vw - 80px);
+  height: calc(100vh - 80px);
+  padding: 40px;
+}
+
+.value {
+  flex: 1;
+  height: 100%;
+  background-color: white;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.v-1 i {
+  font-size: 8em;
+}
+
+.v-1 {
+  --red: calc(255 - (255 - 66) * var(--mouvement-val));
+  --green: calc(255 - (255 - 179) * var(--mouvement-val));
+  --blue: calc(255 - (255 - 245) * var(--mouvement-val));
+  background: rgb(var(--red), var(--green), var(--blue));
+  transition: background-color .2s;
+}
+
+.v-2 {
+  --red: calc(50 + var(--vibration-val) * 206);
+  --green: calc(206 - var(--vibration-val) * 206);
+  --blue: 50;
+  background: rgb(var(--red), var(--green), var(--blue));
+  transition: background-color .2s;
+  color: white;
+}
+
+.v-2 i {
+  left: calc(1px * var(--vibration-val) * -50 * (1 - 2 * mod(var(--clock), 2)));
+  top: calc(1px * var(--vibration-val) * -50 * (1 - 2 * mod(var(--clock), 3)));
+  position: relative;
+  transition: left .1s, top .1s;
+  font-size: 8em;
+}
+
+.v-3 {
+  background: rgb(200, calc(200 -  var(--gaz-val) * 150), calc(200 -  var(--gaz-val) * 150));
+  transition: background-color .2s;
+}
+
+.v-3 i {
+  font-size: 8em;
+  rotate: -90deg;
+}

@@ -1,0 +1,38 @@
+{
+  "name": "iastam-rasp",
+  "productName": "iastam-rasp",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.5.0",
+    "@electron-forge/maker-deb": "^7.5.0",
+    "@electron-forge/maker-rpm": "^7.5.0",
+    "@electron-forge/maker-squirrel": "^7.5.0",
+    "@electron-forge/maker-zip": "^7.5.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.5.0",
+    "@electron-forge/plugin-fuses": "^7.5.0",
+    "@electron/fuses": "^1.8.0",
+    "electron": "32.1.2"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Mohamed-Yassin ROUIS",
+    "email": "myassin.rouis@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@yassinrouis/logger": "^1.1.2",
+    "bcrypt": "^5.1.1",
+    "electron-squirrel-startup": "^1.0.1",
+    "serialport": "^12.0.0",
+    "socket.io": "^4.8.0"
+  }
+}
